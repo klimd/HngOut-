@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Chat Demo</title>
+</head>
+
+<script language=JAVASCRIPT>
+
+var name = // (Pulls current player name from database) ;
+
+function loadoldchat(){
+	document.getElementById("chat").value = //(Pull entire chat table);
+	loadoldchat();
+}
+
+function newchatpls(){
+	var newtext;
+	var time = new Date();
+	newtext = "[" + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds()
+	+ "] " + name + ": " + document.getElementById("newchat").value;
+	// (Push newtext to database);
+}
+
+</script>
+
+<body onLoad="loadoldchat()">
+<form>
+	<textarea id="chat" rows=20 cols=40 wrap=on readonly style="resize:none; overflow-y: scroll">
+	</textarea></br>
+	<input type="text" id="newchat" value="Enter Chat Here">
+	<input type="submit" value=">" onclick="newchatpls()">
+</form>
+</body>
+</html>
